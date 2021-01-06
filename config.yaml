@@ -9,4 +9,4 @@ keywords:
 score_threshold: 0
 
 # レポートの遡及期間
-date_delta: 30
+d_delta: 30
