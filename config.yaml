@@ -3,7 +3,7 @@ subject: 'cat:q-fin.*'
 
 # 検索キーワード
 keywords:
-        intraday: 3
+        stochastic: 3
 
 # 通知の閾値
 score_threshold: 0
