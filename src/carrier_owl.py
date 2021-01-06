@@ -165,9 +165,10 @@ def main():
     config = get_config()
     subject = config['subject']
     keywords = config['keywords']
+    days_delta = int(config['days_delta'])
     score_threshold = float(config['score_threshold'])
 
-    yesterday = datetime.datetime.today() - datetime.timedelta(days=30)
+    yesterday = datetime.datetime.today() - datetime.timedelta(days=days_delta)
     yesterday_str = yesterday.strftime('%Y%m%d')
     # datetime format YYYYMMDDHHMMSS
     arxiv_query = f'({subject}) AND ' \
