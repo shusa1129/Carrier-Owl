@@ -3,10 +3,10 @@ subject: 'cat:q-fin.*'
 
 # 検索キーワード
 keywords:
-        stochastic: 3
+        is: 1
 
 # 通知の閾値
 score_threshold: 0
 
 # レポートの遡及期間
-days_delta: 30
+days_delta: 3
