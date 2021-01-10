@@ -168,12 +168,15 @@ def main():
     days_delta = int(config['days_delta'])
     score_threshold = float(config['score_threshold'])
 
-    yesterday = datetime.datetime.today() - datetime.timedelta(days=days_delta)
+    startday = datetime.datetime.today() - datetime.timedelta(days=days_delta)
+    startday_str = startday.strftime('%Y%m%d')
+
+    yesterday = datetime.datetime.today() - datetime.timedelta(days=1)
     yesterday_str = yesterday.strftime('%Y%m%d')
     # datetime format YYYYMMDDHHMMSS
     arxiv_query = f'({subject}) AND ' \
                   f'submittedDate:' \
-                  f'[{yesterday_str}000000 TO {yesterday_str}235959]'
+                  f'[{startday_str}000000 TO {yesterday_str}235959]'
     articles = arxiv.query(query=arxiv_query,
                            max_results=1000,
                            sort_by='submittedDate',
